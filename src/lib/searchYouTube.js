@@ -15,6 +15,7 @@ var searchYouTube = (query, callback) => {
       console.error('chatterbox: Failed to fetch messages', error);
     }
   });
+
 };
 
 export default searchYouTube;

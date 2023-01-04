@@ -3,7 +3,6 @@ var VideoListEntry = (props) => {
   const decodeApostrophe = (input) => {
     return input.split('&#39;').join('\'');
   };
-  console.log('test test', props.video);
   return (
     <div className="video-list-entry media" onClick={() => { props.setVideo(props.video); }}>
       <div className="media-left media-middle">

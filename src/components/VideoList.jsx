@@ -2,7 +2,7 @@ import VideoListEntry from './VideoListEntry.js';
 
 
 var VideoList = (props) => {
-  console.log(props.onClick);
+  // console.log(props.onClick);
 
   // let onClick = React.useEffect(() => {
   //   props.onClick(props.video);
