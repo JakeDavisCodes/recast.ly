@@ -1,4 +1,4 @@
-var Search = () => {
+var Search = (props) => {
   const handleSubmit = () => {
 
   };
@@ -7,7 +7,7 @@ var Search = () => {
 
   return (
     <div className="search-bar form-inline">
-      <input className="form-control" type="text" />
+      <input className="form-control" type="text" onChange={props.searchHandler}/>
       <button className="btn hidden-sm-down">
         <span className="glyphicon glyphicon-search"></span>
       </button>

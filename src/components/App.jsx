@@ -2,23 +2,22 @@ import Search from './Search.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import exampleVideoData from '../data/exampleVideoData.js';
-
+import SearchYouTube from '../lib/searchYouTube.js';
 
 const { useState, useEffect } = React;
 
 const App = (props) => {
 
-  const [video, setVideo] = useState({});
+  const [video, setVideo] = useState(exampleVideoData[0]);
   const [videos, setVideos] = useState([]);
-  console.log('this is what', props);
 
-  useEffect(() => {
-    setVideos(props.searchYouTube('cat', data => {
-      for (let i = 0; i < data.length; i++) {
-        setVideos(videos.concat([data[i]]));
-      }
-    }));
-  });
+  const searchHandler = (search) => {
+    let query = search.target.value;
+    console.log(query);
+    SearchYouTube(query, (videos) => {
+      setVideos(videos);
+    });
+  };
 
   console.log(videos);
 
@@ -26,7 +25,7 @@ const App = (props) => {
     <div>
       <nav className="navbar">
         <div className="col-md-6 offset-md-3">
-          <em><Search /></em>
+          <em><Search searchHandler = {searchHandler}/></em>
         </div>
       </nav>
       <div className="row">
