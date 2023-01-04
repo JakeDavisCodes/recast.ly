@@ -62,6 +62,7 @@ describe('searchYouTube', function() {
     searchYouTube('cats', () => {});
 
     var params = getURLSearchParams(requests[0].url);
+    console.log(params);
     expect(params.q).to.equal('cats');
   });
 

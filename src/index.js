@@ -1,5 +1,4 @@
-// TODO: Render the `App` component to the DOM
 import App from './components/App.js';
+import SearchYouTube from './lib/searchYouTube.js';
 
-
-ReactDom.render(<App />, documentById('app'));
+ReactDOM.render(<App searchYoutube = {SearchYouTube.searchYouTube}/>, document.getElementById('app'));
