@@ -1,20 +1,15 @@
-import VideoListEntry from './VideoListEntry.js';
+import { exampleVideoData } from '../data/exampleVideoData.js';
 
 
-var VideoList = (props) => {
-  // console.log(props.onClick);
-
-  // let onClick = React.useEffect(() => {
-  //   props.onClick(props.video);
-  // }, []);
-
-  return (
-    <div className="video-list">
-      {props.videos.map(video => <VideoListEntry video = {video} setVideo = {props.setVideo}/>)}
-    </div>
-  );
-
-};
+var VideoList = () => (
+  <div className="video-list">
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+    <div><h5><em>videoListEntry</em> view goes here</h5></div>
+  </div>
+);
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
