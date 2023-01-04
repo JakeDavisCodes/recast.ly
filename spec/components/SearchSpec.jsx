@@ -1,4 +1,5 @@
 import App from '../../src/components/App.js';
+
 describe ('Search', function() {
   var {
     Simulate,
