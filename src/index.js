@@ -1,3 +1,3 @@
-import App from 'src/components/App.js';
+import App from './components/App.js';
 
-ReactDom.render(<App />);
+ReactDom.render(<App />, documentById('app'));
