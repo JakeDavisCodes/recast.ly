@@ -1,5 +1,8 @@
-const decodeApostrophe = (input) => {
-  return input.split('&#39;').join('\'');
+const decode = (input) => {
+  input = input.split('&#39;').join('\'');
+  input = input.split('&quot;').join('\"');
+  input = input.split('&amp;').join('&');
+  return input;
 };
 
 var VideoPlayer = (props) => {
@@ -9,8 +12,8 @@ var VideoPlayer = (props) => {
         <iframe className="embed-responsive-item" src={'https://www.youtube.com/embed/' + props.video.id.videoId} allowFullScreen></iframe>
       </div>
       <div className="video-player-details">
-        <h3>{decodeApostrophe(props.video.snippet.title)}</h3>
-        <div>{decodeApostrophe(props.video.snippet.description)}</div>
+        <h3>{decode(props.video.snippet.title)}</h3>
+        <div>{decode(props.video.snippet.description)}</div>
       </div>
     </div>
   );

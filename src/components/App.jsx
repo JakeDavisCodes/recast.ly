@@ -11,12 +11,15 @@ const App = (props) => {
   const [video, setVideo] = useState(exampleVideoData[0]);
   const [videos, setVideos] = useState([]);
 
+  let timeout;
   const searchHandler = (search) => {
     let query = search.target.value;
-    console.log(query);
-    SearchYouTube(query, (videos) => {
-      setVideos(videos);
-    });
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      SearchYouTube(query, (videos) => {
+        setVideos(videos);
+      });
+    }, 500);
   };
 
   console.log(videos);
